@@ -1,0 +1,157 @@
+class atm:
+    class sbi:
+        def __init__(self,name,total_ammount):
+            self.name=name
+            self.total_ammount=total_ammount
+            self.value=0
+        def withdraw(self,ammount):
+            self.ammount=ammount
+
+            self.total_ammount=self.total_ammount-self.ammount
+            self.value=self.ammount
+            return f" u had {self.total_ammount+self.ammount} and after withdrawing {self.ammount} rupees " \
+                   f" now u have {self.total_ammount} rupees in ur account balance."
+        def details_check(self):
+            print(f"ur account have {self.total_ammount+self.value} rupees")
+
+    class union:
+        def __init__(self,name,total_ammount):
+            self.name = name
+            self.total_ammount = total_ammount
+            self.value = 0
+
+        def withdraw(self,ammount):
+            self.ammount = ammount
+
+            self.total_ammount = self.total_ammount - self.ammount
+            self.value = self.ammount
+            return f" u had {self.total_ammount + self.ammount} and after withdrawing {self.ammount} rupees " \
+                   f" now u have {self.total_ammount} rupees in ur account balance."
+
+        def details_check(self):
+            print(f"ur account have {self.total_ammount + self.value} rupees")
+    class corporate:
+        def __init__(self,name,total_ammount):
+            self.name = name
+            self.total_ammount = total_ammount
+            self.value = 0
+
+        def withdraw(self,ammount):
+            self.ammount = ammount
+
+            self.total_ammount = self.total_ammount - self.ammount
+            self.value = self.ammount
+            return f" u had {self.total_ammount + self.ammount} and after withdrawing {self.ammount} rupees " \
+                   f" now u have {self.total_ammount} rupees in ur account balance."
+        def details_check(self):
+            print(f"ur account have {self.total_ammount + self.value} rupees")
+
+print('1. for sbi card \n'
+      '2. for union card \n'
+      '3. for corporate card \n'
+      '4. to exit the atm')
+ex=False
+while ex!=True:
+    i=int(input("enter the no to select the card->"))
+    if i==1:
+        n=0
+        def main():
+            print("welcome to the sbi atm zone..")
+
+            a1 = atm.sbi('monojit',100000)
+            print(f"In ur account you have {a1.total_ammount} rupees")
+            print('1. for withdraw money \n'
+                  '2. for checking card balance \n'
+                  '3. exit the atm \n')
+            Ex = False
+            while Ex != True:
+                k = int(input('enter your choice->'))
+                if k==3:
+                    Ex = True
+                elif k==1:
+                    global n
+                    n=int(input('enter your ammount->'))
+                    print(a1.withdraw(n))
+                elif k==2:
+                    # print("1. for current(if u havn't done any transaction yet then u can use this option \n"
+                    #       "else go with option '2' \n"
+                    #       "2. for after transaction only")
+                    # l=int(input("enter your choice->"))
+                    # if l==1:
+                    #     a1.details_check()
+                    # if l==2:
+                        a1.withdraw(n)
+                        a1.details_check()
+                else:
+                    print("enter the correct no")
+        main()
+    elif i==2:
+        v=0
+        def main1():
+            print("welcome to the union atm zone..")
+            b1 = atm.union('monojit',12000)
+            print(f"In ur account you have {b1.total_ammount} rupees")
+            print('1. for withdraw money \n'
+                  '2. for checking card balance \n'
+                  '3. exit the atm \n')
+            Ex = False
+            while Ex != True:
+                k = int(input('enter your choice->'))
+                if k==3:
+                    Ex = True
+                elif k==1:
+                    global v
+                    v=int(input('enter the ammount->'))
+                    print(b1.withdraw(v))
+                elif k==2:
+                    # print("1. for current(if u havn't done any transaction yet then u can use this option \n"
+                    #       "else go with option '2' \n"
+                    #       "2. for after transaction only")
+                    #
+                    # l = int(input("enter your choice->"))
+                    # if l == 1:
+                    #     b1.details_check()
+                    # if l == 2:
+                        b1.withdraw(v)
+                        b1.details_check()
+                else:
+                    print("enter the correct no")
+        main1()
+    elif i==3:
+        p=0
+        def main2():
+            print("welcome to the corporate atm zone..")
+            c1=atm.corporate('monojit',300000)
+            print(f"In ur account you have {c1.total_ammount} rupees")
+            print('1. for withdraw money \n'
+                  '2. for checking card balance \n'
+                  '3. exit the atm \n')
+            Ex = False
+            while Ex != True:
+                k = int(input('enter your choice->'))
+                if k==3:
+                    Ex = True
+                elif k==1:
+                    global p
+                    p=int(input('enter the ammount->'))
+                    print(c1.withdraw(p))
+                elif k==2:
+                    # print("1. for current(if u havn't done any transaction yet then u can use this option \n"
+                    #       "else go with option '2' \n"
+                    #       "2. for after transaction only")
+                    # l = int(input("enter your choice->"))
+                    # if l == 1:
+                    #     c1.details_check()
+                    # if l == 2:
+                        c1.withdraw(p)
+                        c1.details_check()
+                else:
+                    print("enter the correct no")
+        main2()
+    elif i==4:
+        ex=True
+    else:
+        print("enter the correct no..............")
+
+print('thnx for visiting. Have a greate day....')
+
